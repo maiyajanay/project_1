@@ -77,6 +77,7 @@ const products = [
         <h3>${product.name}</h3>
         <p>Description: ${product.description}</p>
         <p>Price: $${product.price.toFixed(2)}</p>
+        <button onclick="addToCart(${products.indexOf(product)})">Add to Cart</button>
       `;
       menu.appendChild(item);
     });
