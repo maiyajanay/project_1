@@ -2,68 +2,68 @@ const products = [
     {
       category: "Coffee",
       name: "Pour Over",
-      description: "A method of brewing coffee where hot water is poured over coffee grounds in a filter.",
-      price: 3.50
-    },
-    {
-      category: "Coffee",
-      name: "Latte",
-      description: "Espresso combined with steamed milk and topped with a small amount of foam.",
+      description: "Hot water poured over freshly ground coffee",
       price: 4.00
     },
     {
       category: "Coffee",
-      name: "Americano",
-      description: "A coffee drink made by diluting espresso with hot water.",
-      price: 3.00
+      name: "Latte",
+      description: "Espresso with steamed milk",
+      price: 5.00
     },
     {
       category: "Coffee",
       name: "Cappuccino",
-      description: "Espresso mixed with equal parts of steamed milk and milk foam.",
-      price: 4.50
+      description: "Espresso with steamed milk and foam",
+      price: 5.00
+    },
+    {
+      category: "Coffee",
+      name: "Americano",
+      description: "Espresso with hot water.",
+      price: 4.00
     },
     {
       category: "Coffee",
       name: "Red Eye",
-      description: "A coffee drink made by combining brewed coffee with a shot of espresso.",
-      price: 4.25
+      description: "Espresso and brewed coffee",
+      price: 4.50
     },
     {
       category: "Tea",
       name: "Black Tea",
-      description: "A type of tea made from the leaves of the Camellia sinensis plant, typically steeped in hot water.",
-      price: 2.50
-    },
-    {
-      category: "Tea",
-      name: "Chai Tea Latte",
-      description: "A spiced tea concentrate mixed with steamed milk, often sweetened.",
-      price: 4.75
+      description: "Earl Grey or English Breakfast",
+      price: 3.00
     },
     {
       category: "Tea",
       name: "Green Tea",
-      description: "A type of tea made from the leaves of the Camellia sinensis plant, known for its fresh taste and green color.",
+      description: "Jasmine or Matcha",
       price: 3.00
+    },
+    {
+      category: "Tea",
+      name: "Chai Tea Latte",
+      description: "Spiced chai with steamed milk",
+      price: 5.00
     },
     {
       category: "Snacks",
       name: "Breakfast Sandwich",
-      description: "A sandwich typically consisting of eggs, cheese, and bacon or sausage served on bread or a croissant.",
-      price: 5.50
+      description: "Bacon, egg, & cheese served on a bun or croissant",
+      price: 10.00
     },
     {
       category: "Snacks",
       name: "Croissant",
-      description: "A buttery, flaky pastry made with layers of dough and butter.",
-      price: 3.00
+      description: "A buttery, flaky pastry",
+      price: 4.00
     },
     {
       category: "Snacks",
       name: "Cookie",
-      description: "A sweet baked treat often made with ingredients like flour, sugar, and chocolate chips.",
-      price: 2.00
+      description: "Chocolate Chip",
+      price: 3.00
     }
   ];
 
@@ -75,12 +75,23 @@ const products = [
       const item = document.createElement("div");
       item.innerHTML = `
         <h3>${product.name}</h3>
-        <p>Description: ${product.description}</p>
-        <p>Price: $${product.price.toFixed(2)}</p>
-        <button onclick="addToCart(${products.indexOf(product)})">Add to Cart</button>
+        <p>${product.description}</p>
+        <p>$${product.price.toFixed(2)}</p>
+        <button onclick="addToCart(${products.indexOf(product)})" id="addToCart">Add to Cart</button>
       `;
       menu.appendChild(item);
     });
   }
   
   displayMenu();
+
+  let addToCart = [];
+
+  const allDivs = document.querySelectorAll('div');
+  
+  for(let div of allDivs) {
+    div.addEventListener('click', () => {
+      addToCart.push(product.price);
+      console.log(selectedPrices);
+    })
+  }

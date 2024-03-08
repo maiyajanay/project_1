@@ -1,4 +1,37 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid rgb(216, 40, 20);
+    background-color: rgb(216, 40, 20);
+    color: bisque;
+}
+
+h1, #slogan {
+    margin: 5px;
+    padding: 3px;
+}
+
+#slogan {
+    font-style: italic;
+}
+
+body {
+    background-color: bisque;
+}
+
+#menu {
+    margin: 3px;
+}
+
+div {
+    margin: 5px;
+    padding: 5px;
 }
