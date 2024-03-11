@@ -68,30 +68,30 @@ const products = [
   ];
 
 
-  function displayMenu() {
-    const menu = document.getElementById("product-menu");
-  
-    products.forEach(product => {
-      const item = document.createElement("div");
-      item.innerHTML = `
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <p>$${product.price.toFixed(2)}</p>
-        <button onclick="addToCart(${products.indexOf(product)})" id="addToCart">Add to Cart</button>
-      `;
-      menu.appendChild(item);
-    });
-  }
-  
-  displayMenu();
+function displayMenu() {
+  const menu = document.getElementById("product-menu");
 
-  let addToCart = [];
+  products.forEach(product => {
+    const item = document.createElement("div");
+    item.innerHTML = `
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <p>$${product.price.toFixed(2)}</p>
+      <button onclick="addToCart(${products.indexOf(product)})" id="addToCart">Add to Cart</button>
+    `;
+    menu.appendChild(item);
+  });
+}
 
-  const allDivs = document.querySelectorAll('div');
-  
-  for(let div of allDivs) {
-    div.addEventListener('click', () => {
-      addToCart.push(product.price);
-      console.log(selectedPrices);
-    })
-  }
+displayMenu();
+
+let addToCart = [];
+
+const allDivs = document.querySelectorAll('div');
+
+for(let div of allDivs) {
+  div.addEventListener('click', () => {
+    addToCart.push(product.price);
+    console.log(selectedPrices);
+  })
+}
