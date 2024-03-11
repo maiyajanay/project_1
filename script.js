@@ -77,21 +77,59 @@ function displayMenu() {
       <h3>${product.name}</h3>
       <p>${product.description}</p>
       <p>$${product.price.toFixed(2)}</p>
-      <button onclick="addToCart(${products.indexOf(product)})" id="addToCart">Add to Cart</button>
+      <button class="addToCart">Add to Cart</button>
     `;
     menu.appendChild(item);
+
+    const addButton = item.querySelector(".addToCart");
+    addButton.addEventListener("click", () => {
+      addToCart(products.indexOf(product));
+    });
   });
 }
 
 displayMenu();
 
-let addToCart = [];
+let cart = [];
 
-const allDivs = document.querySelectorAll('div');
-
-for(let div of allDivs) {
-  div.addEventListener('click', () => {
-    addToCart.push(product.price);
-    console.log(selectedPrices);
-  })
+function addToCart(index) {
+  const item = products[index];
+  cart.push(item);
+  updateCart();
 }
+
+function updateCart() {
+  const cartItems = document.getElementById("cart-items");
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  cart.forEach(item => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${item.name} - $${item.price}`
+    cartItems.appendChild(listItem);
+    total += item.price;
+  });
+
+  const subtotal = document.getElementById("subtotal");
+  subtotal.textContent = `Subtotal: $${total}`;
+
+  const tax = document.getElementById("tax");
+  const taxRate = 0.07;
+  const actualTax = total * taxRate;
+  tax.textContent = `Tax: $${actualTax.toFixed(2)}`;
+
+  const priceTotal = document.getElementById("total");
+  const actualTotal = total + actualTax;
+  priceTotal.textContent = `Total: $${actualTotal.toFixed(2)}`;
+}
+
+// let addToCart = [];
+
+// const allDivs = document.querySelectorAll('div');
+
+// for(let div of allDivs) {
+//   div.addEventListener('click', () => {
+//     addToCart.push(product.price);
+//     console.log(selectedPrices);
+//   })
+// }
