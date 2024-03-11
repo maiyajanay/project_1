@@ -77,9 +77,14 @@ function displayMenu() {
       <h3>${product.name}</h3>
       <p>${product.description}</p>
       <p>$${product.price.toFixed(2)}</p>
-      <button onclick="addToCart(${products.indexOf(product)})" id="addToCart">Add to Cart</button>
+      <button class="addToCart">Add to Cart</button>
     `;
     menu.appendChild(item);
+
+    const addButton = item.querySelector(".addToCart");
+    addButton.addEventListener("click", () => {
+      addToCart(products.indexOf(product));
+    });
   });
 }
 
@@ -116,7 +121,6 @@ function updateCart() {
   const priceTotal = document.getElementById("total");
   const actualTotal = total + actualTax;
   priceTotal.textContent = `Total: $${actualTotal.toFixed(2)}`;
-
 }
 
 // let addToCart = [];
