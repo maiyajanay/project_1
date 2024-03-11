@@ -9,8 +9,8 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 3px solid rgb(216, 40, 20);
-    background-color: rgb(216, 40, 20);
+    border: 3px solid rgb(137, 184, 170);
+    background-color: rgb(137, 184, 170);
     color: bisque;
 }
 
@@ -24,6 +24,8 @@ h1, #slogan {
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
     background-color: bisque;
 }
 
@@ -34,4 +36,35 @@ body {
 div {
     margin: 5px;
     padding: 5px;
+}
+
+button {
+    border: 2px solid black;
+    padding: 2px;
+    border-radius: 10%;
+    background-color: rgb(137, 184, 170);
+}
+
+@media only screen and (min-width: 800px) {
+
+body {
+    display: flex;
+}
+
+header {
+    display: flex;
+    
+}
+
+#cart {
+    display: block;
+    position: relative;
+    flex: 1;
+    margin: 5px;
+    height: 90%;
+    width: 30%;
+    background-color: whitesmoke;
+
+}
+
 }
