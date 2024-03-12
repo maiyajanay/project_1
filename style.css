@@ -1,11 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 header {
     margin: 0;
+    padding: 5px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -40,15 +41,44 @@ div {
 
 button {
     border: 2px solid black;
-    padding: 2px;
+    margin: 2px;
+    padding: 4px;
     border-radius: 10%;
     background-color: rgb(137, 184, 170);
+}
+
+#skull {
+    height: 100px;
+    border: 2px solid black;
+    background-color: bisque;
+    padding: 5px;
+    float: right;
+}
+
+#cart {
+    background-color: whitesmoke;
+}
+
+#yourCart {
+    margin: 3px;
+    margin-bottom: 6px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 3px;
 }
 
 @media only screen and (min-width: 800px) {
 
 body {
     display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
 }
 
 header {
@@ -59,11 +89,16 @@ header {
 #cart {
     display: block;
     position: relative;
-    flex: 1;
+    /*flex: 1;*/
     margin: 5px;
     height: 90%;
-    width: 30%;
+    width: 40%;
+    /*width: 40%;*/
     background-color: whitesmoke;
+
+    /*display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;*/
 
 }
 
