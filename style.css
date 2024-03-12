@@ -73,10 +73,12 @@ ul {
 
 body {
     display: flex;
+    flex-direction: column;
 }
 
 main {
     display: flex;
+    justify-content: space-between;
 }
 
 header {
@@ -87,10 +89,11 @@ header {
 #cart {
     display: block;
     position: relative;
-    flex: 1;
+    /*flex: 1;*/
     margin: 5px;
     height: 90%;
     width: 40%;
+    /*width: 40%;*/
     background-color: whitesmoke;
 
     /*display: flex;
