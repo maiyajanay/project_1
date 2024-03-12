@@ -123,13 +123,17 @@ function updateCart() {
   priceTotal.textContent = `Total: $${actualTotal.toFixed(2)}`;
 }
 
-// let addToCart = [];
-
-// const allDivs = document.querySelectorAll('div');
-
-// for(let div of allDivs) {
-//   div.addEventListener('click', () => {
-//     addToCart.push(product.price);
-//     console.log(selectedPrices);
-//   })
-// }
+const checkoutButton = document.getElementById("checkout-button");
+checkoutButton.addEventListener("click", () => {
+  const total = actualTotal;
+  const paymentType = prompt('How would you like to pay? (Cash or Card) ').toUpperCase();
+  // if (paymentType === 'CASH') {
+  //   const cashTendered = +prompt('How much would you like to pay in cash? ');
+  //   const change = cashTendered - total;
+  //   alert(`Your Change is $${change.toFixed(2)}`);
+  // } else if (paymentType === 'CARD') {
+  //   const cardNumber = +prompt('Enter your card number ');
+  //   const expiration = +prompt('Enter your card expiration ');
+  //   const CVV = +prompt('Enter your CVV ');
+  // }
+})  
