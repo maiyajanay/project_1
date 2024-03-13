@@ -124,16 +124,9 @@ function updateCart() {
 }
 
 const checkoutButton = document.getElementById("checkout-button");
+
 checkoutButton.addEventListener("click", () => {
-  const total = actualTotal;
-  const paymentType = prompt('How would you like to pay? (Cash or Card) ').toUpperCase();
-  // if (paymentType === 'CASH') {
-  //   const cashTendered = +prompt('How much would you like to pay in cash? ');
-  //   const change = cashTendered - total;
-  //   alert(`Your Change is $${change.toFixed(2)}`);
-  // } else if (paymentType === 'CARD') {
-  //   const cardNumber = +prompt('Enter your card number ');
-  //   const expiration = +prompt('Enter your card expiration ');
-  //   const CVV = +prompt('Enter your CVV ');
-  // }
-})  
+  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("total", JSON.stringify(total));
+  window.location.href = "checkout.html";
+});
