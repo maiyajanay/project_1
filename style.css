@@ -57,10 +57,12 @@ button {
 
 #cart {
     background-color: whitesmoke;
+    border: 2px solid black;
 }
 
 #yourCart {
     margin: 3px;
+    padding: 3px;
     margin-bottom: 6px;
 }
 
@@ -74,11 +76,13 @@ ul {
 body {
     display: flex;
     flex-direction: column;
+    width: 100vw;
 }
 
 main {
     display: flex;
     justify-content: space-between;
+
 }
 
 header {
