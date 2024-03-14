@@ -35,10 +35,22 @@ ul {
     margin-bottom: 10px;
 }
 
+#paymentSelection {
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: whitesmoke;
+    width: 300px;
+}
+
 #paymentMenu, #cart-container, #ccForm, #cashForm {
     /*display: none;*/
     margin: 5px;
     padding: 5px;
+}
+
+#selection {
+    margin-bottom: 10px;
 }
 
 button {
@@ -47,6 +59,15 @@ button {
     padding: 5px;
     border-radius: 10%;
     background-color: rgb(137, 184, 170);
+}
+
+.paymentButton {
+    margin: 5px;
+    padding: 5px;
+}
+
+#paymentPlaceholder {
+    margin-top: 10px;
 }
 
 #yourCartHeader {
@@ -59,5 +80,6 @@ button {
 }
 
 .totalCart {
-    margin: 5px 0;
+    margin: 5px;
+    margin-bottom: 10px;
 }
