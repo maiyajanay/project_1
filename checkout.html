@@ -11,6 +11,20 @@
 </head>
 <body>
     
+    <p>Select form of payment:</p>
+    <select name="paymentForm" id="paymentForm">
+        <option value="Cash">Cash</option>
+        <option value="credit">Credit Card</option>
+    </select>
+
+    <button id="completeCheckout">Complete Checkout</button>
+
+    <div id="ccForm">
+        <h3>Please enter info below:</h3>
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" placeholder="First Name"/>
+    </div>
+
     <script src="checkout.js"></script>
 </body>
 </html>
