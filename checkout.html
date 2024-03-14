@@ -11,30 +11,52 @@
 </head>
 <body>
 
+    <header>
+        <h1>M&M Cafe</h1>
+        <h2 id="slogan">"Death Before Decaf"</h3>
+        <img id="skull" src="skullhollow.jpg"/>
+    </header>
+
     <main>
         <div id="cart-container">
-            <h2>Your Cart</h2>
+            <h2 id="yourCartHeader">Your Cart</h2>
             <ul id="cart-items"></ul>
-            <div id="subtotal"></div>
-            <div id="tax"></div>
-            <div id="total"></div>
+            <div class="totalCart" id="subtotal"></div>
+            <div class="totalCart" id="tax"></div>
+            <div class="totalCart" id="total"></div>
         </div>
     </main>
 
     
-    <h3>Select form of payment:</h3>
-
-    <select name="paymentForm" id="paymentForm">
-        <option value="cash">Cash</option>
-        <option value="credit">Credit Card</option>
-    </select>
+    <!-- <div id="paymentMenu">
+        <h3>Select form of payment:</h3>
+        <select name="paymentForm" id="paymentForm">
+            <option value="cash">Cash</option>
+            <option value="credit">Credit Card</option>
+        </select>
+    </div> -->
 
     <br>
 
-    <button onclick="getPayment()" id="completeCheckout">Complete Checkout</button>
+    <!-- <button onclick="getPayment()" 
+        id="completeCheckout">Complete Checkout</button> -->
+
+    <button class="paymentButton" id="cashPayment">Cash Payment</button> 
+    <button class="paymentButton" id="ccPayment">Credit Card Payment</button>   
+
+        <div id="cashForm">
+            <h3>Cash Payment:</h3>
+            <form>
+                <div id="totalDue"></div>
+                <label for="cashAmount">Cash Amount:</label>
+                <input type="number" id="cashAmount" placeholder="Enter cash amount"><br>
+                <button type="button" id="calculateChange">Calculate Change</button><br>
+                <div id="changeAmount"></div>
+            </form>        
+        </div>
 
     <div id="ccForm">
-        <h3>Please enter info below:</h3>
+        <h3>Credit Card Payment:</h3>
         <label for="firstName">First Name</label>
         <input type="text" name="firstName" placeholder="First Name"/>
         <label for="lastName">Last Name</label>
@@ -52,16 +74,7 @@
 
     </div>
 
-    <div id="cashForm">
-        <h3>Cash Payment:</h3>
-        <form>
-            <div id="totalDue"></div>
-            <label for="cashAmount">Cash Amount:</label>
-            <input type="number" id="cashAmount" placeholder="Enter cash amount"><br>
-            <button type="button" id="calculateChange">Calculate Change</button><br>
-            <div id="changeAmount"></div>
-        </form>        
-    </div>
+    
 
 
     <script src="checkout.js"></script>
