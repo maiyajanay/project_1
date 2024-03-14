@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
-<<<<<<< HEAD
+
     <main>
         <div id="cart-container">
             <h2>Your Cart</h2>
@@ -20,13 +20,15 @@
             <div id="total"></div>
         </div>
     </main>
-=======
+
     
-    <p>Select form of payment:</p>
+    <h3>Select form of payment:</h3>
     <select name="paymentForm" id="paymentForm">
         <option value="Cash">Cash</option>
         <option value="credit">Credit Card</option>
     </select>
+
+    <br>
 
     <button id="completeCheckout">Complete Checkout</button>
 
@@ -36,6 +38,16 @@
         <input type="text" name="firstName" placeholder="First Name"/>
         <label for="lastName">Last Name</label>
         <input type="text" name="lastName" placeholder="Last Name"/>
+        <br>
+        <label for="ccNumber">Card Number</label>
+        <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" 
+            autocomplete="cc-number" maxlength="19" 
+            placeholder="xxxx xxxx xxxx xxxx" required/>
+        <label for="expDate">Expiration</label>
+        <input type="text" name="expDate" placeholder="MO/YR"/>
+        <label for="cvv">CVV</label>
+        <input type="text" name="cvv" placeholder="CVV"/>
+
     </div>
 
     <script src="checkout.js"></script>

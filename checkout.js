@@ -23,3 +23,6 @@ function displayCart() {
 }
 
 displayCart();
+
+// Checkout options
+
