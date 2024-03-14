@@ -23,14 +23,15 @@
 
     
     <h3>Select form of payment:</h3>
+
     <select name="paymentForm" id="paymentForm">
-        <option value="Cash">Cash</option>
+        <option value="cash">Cash</option>
         <option value="credit">Credit Card</option>
     </select>
 
     <br>
 
-    <button id="completeCheckout">Complete Checkout</button>
+    <button onclick="getPayment()" id="completeCheckout">Complete Checkout</button>
 
     <div id="ccForm">
         <h3>Please enter info below:</h3>
@@ -46,7 +47,8 @@
         <label for="expDate">Expiration</label>
         <input type="text" name="expDate" placeholder="MO/YR"/>
         <label for="cvv">CVV</label>
-        <input type="text" name="cvv" placeholder="CVV"/>
+        <input type="tel" inputmode="numeric" name="cvv" 
+            maxlength="3" placeholder="CVV"/>
 
     </div>
 
