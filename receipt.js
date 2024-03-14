@@ -30,7 +30,7 @@ priceTotal.textContent = `Total: $${actualTotal.toFixed(2)}`;
 
 const paymentInfoElement = document.createElement("div");
 if (paymentMethod === "cash") {
-    paymentInfoElement.textContent = `Payment Method: Cash, Amount Paid: $${cashAmount}, Change: ${changeAmount}`;
+    paymentInfoElement.innerHTML = `Payment Method: Cash<br>Amount Paid: $${cashAmount}<br>${changeAmount}`;
 } else {
     paymentInfoElement.textContent = `Payment Method: Card`;
 }
