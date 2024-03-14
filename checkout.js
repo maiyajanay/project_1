@@ -66,3 +66,19 @@ const creditButton = document.getElementById("creditButton");
 
 cashButton.addEventListener("click", handleCashPayment);
 creditButton.addEventListener("click", handleCreditCardPayment);
+
+const completeCheckout = document.getElementById("completeCheckout");
+
+completeCheckout.addEventListener("click", () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("total", JSON.stringify(total));
+    localStorage.setItem("tax", JSON.stringify(actualTax));
+    localStorage.setItem("actualTotal", JSON.stringify(actualTotal));
+    const paymentMethod = document.getElementById("cashForm").style.display === "block" ? "cash" : "card";
+    const cashAmount = document.getElementById("cashAmount").value;
+    const changeAmount = document.getElementById("changeAmount").textContent;
+    localStorage.setItem("paymentMethod", paymentMethod);
+    localStorage.setItem("cashAmount", cashAmount);
+    localStorage.setItem("changeAmount", changeAmount);
+    window.location.href = "receipt.html";
+  });
