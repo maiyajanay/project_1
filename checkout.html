@@ -24,16 +24,17 @@
     
     <h3>Select form of payment:</h3>
 
-    <select name="paymentForm" id="paymentForm">
-        <option value="cash">Cash</option>
-        <option value="credit">Credit Card</option>
-    </select>
+    <button id="cashButton">Cash</button>
+    <button id="creditButton">Credit Card</button>
 
     <br>
 
-    <button onclick="getPayment()" id="completeCheckout">Complete Checkout</button>
+    <div id="paymentPlaceholder">Please Select Payment Method Above</div>
 
-    <div id="ccForm">
+    <br>
+
+    
+    <div id="ccForm" style="display: none;">
         <h3>Please enter info below:</h3>
         <label for="firstName">First Name</label>
         <input type="text" name="firstName" placeholder="First Name"/>
@@ -52,7 +53,7 @@
 
     </div>
 
-    <div id="cashForm">
+    <div id="cashForm" style="display: none;">
         <h3>Cash Payment:</h3>
         <form>
             <div id="totalDue"></div>
@@ -63,6 +64,9 @@
         </form>        
     </div>
 
+    <br>
+
+<button onclick="getPayment()" id="completeCheckout">Complete Checkout</button>
 
     <script src="checkout.js"></script>
 </body>

@@ -46,18 +46,23 @@ function calculateChange() {
 const calculateChangeButton = document.getElementById("calculateChange");
 calculateChangeButton.addEventListener("click", calculateChange);
 
-// Select payment option
-
 let paymentForm = document.getElementById("paymentForm");
 const ccForm = document.getElementById("ccForm");
-// console.log(ccForm);
 
-// function getPayment() {
-//   let a = document.getElementById("paymentForm");
-//   for (let i = 0; i < a.length; i++) {
-//     let option = a.options[i];
-//     if (option.value === "credit") {
-//       document.body.append(ccForm);
-//     }
-//   }
-// }
+function handleCashPayment() {
+    document.getElementById("paymentPlaceholder").style.display = "none";
+    document.getElementById("ccForm").style.display = "none";
+    document.getElementById("cashForm").style.display = "block";
+}
+
+function handleCreditCardPayment() {
+    document.getElementById("paymentPlaceholder").style.display = "none";
+    document.getElementById("cashForm").style.display = "none";
+    document.getElementById("ccForm").style.display = "block";
+}
+
+const cashButton = document.getElementById("cashButton");
+const creditButton = document.getElementById("creditButton");
+
+cashButton.addEventListener("click", handleCashPayment);
+creditButton.addEventListener("click", handleCreditCardPayment);
