@@ -28,35 +28,20 @@
     </main>
 
     
-    <!-- <div id="paymentMenu">
-        <h3>Select form of payment:</h3>
-        <select name="paymentForm" id="paymentForm">
-            <option value="cash">Cash</option>
-            <option value="credit">Credit Card</option>
-        </select>
-    </div> -->
+    <h3>Select form of payment:</h3>
+
+    <button id="cashButton">Cash</button>
+    <button id="creditButton">Credit Card</button>
 
     <br>
 
-    <!-- <button onclick="getPayment()" 
-        id="completeCheckout">Complete Checkout</button> -->
+    <div id="paymentPlaceholder">Please Select Payment Method Above</div>
 
-    <button class="paymentButton" id="cashPayment">Cash Payment</button> 
-    <button class="paymentButton" id="ccPayment">Credit Card Payment</button>   
+    <br>
 
-        <div id="cashForm">
-            <h3>Cash Payment:</h3>
-            <form>
-                <div id="totalDue"></div>
-                <label for="cashAmount">Cash Amount:</label>
-                <input type="number" id="cashAmount" placeholder="Enter cash amount"><br>
-                <button type="button" id="calculateChange">Calculate Change</button><br>
-                <div id="changeAmount"></div>
-            </form>        
-        </div>
-
-    <div id="ccForm">
-        <h3>Credit Card Payment:</h3>
+    
+    <div id="ccForm" style="display: none;">
+        <h3>Please enter info below:</h3>
         <label for="firstName">First Name</label>
         <input type="text" name="firstName" placeholder="First Name"/>
         <label for="lastName">Last Name</label>
@@ -74,8 +59,20 @@
 
     </div>
 
-    
+    <div id="cashForm" style="display: none;">
+        <h3>Cash Payment:</h3>
+        <form>
+            <div id="totalDue"></div>
+            <label for="cashAmount">Cash Amount:</label>
+            <input type="number" id="cashAmount" placeholder="Enter cash amount"><br>
+            <button type="button" id="calculateChange">Calculate Change</button><br>
+            <div id="changeAmount"></div>
+        </form>        
+    </div>
 
+    <br>
+
+<button onclick="getPayment()" id="completeCheckout">Complete Checkout</button>
 
     <script src="checkout.js"></script>
 </body>
